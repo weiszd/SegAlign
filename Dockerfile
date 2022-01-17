@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get purge
 
-RUN git clone --recursive https://github.com/gsneha26/SegAlign.git 
+RUN git clone --recursive https://github.com/weiszd/SegAlign.git 
 WORKDIR SegAlign
 ENV PROJECT_DIR=/home/SegAlign
 

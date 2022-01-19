@@ -356,7 +356,7 @@ int main(int argc, char** argv){
         seq_block_len += seq_len;
         total_q_chr++;
 
-        if(seq_block_len > DEFAULT_SEQ_BLOCK_SIZE){
+        if(seq_block_len > cfg.seq_block_size){
 
             query_block_len.push_back(seq_block_len);
             if(seq_block_len > query_max_block_len)
@@ -512,7 +512,7 @@ int main(int argc, char** argv){
         seq_block_len += seq_len;
         total_r_chr++;
 
-        if(seq_block_len > DEFAULT_SEQ_BLOCK_SIZE){
+        if(seq_block_len > cfg.seq_block_size){
 
             ref_block_len.push_back(seq_block_len);
 

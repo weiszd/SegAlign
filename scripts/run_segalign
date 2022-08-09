@@ -112,6 +112,10 @@ else
 		count=0
 
 		while IFS= read -r line; do
+			if [[ $line = Bad* ]]; then
+				1>&2 echo "Ignoring bad line: $line"
+				continue
+			fi
 			eval "$line" &
 			pids="$pids $!"
 			count=$((count + 1))

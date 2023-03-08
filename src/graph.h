@@ -56,6 +56,7 @@ struct Configuration {
     // Extension parameters
     bool gapped;
     int ydrop;
+    int inner;
     int gappedthresh;
     bool notrivial;
 

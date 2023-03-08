@@ -89,6 +89,7 @@ int main(int argc, char** argv){
     gapped_desc.add_options()
         ("nogapped", po::bool_switch(&cfg.gapped)->default_value(false), "don't perform gapped extension stage")
         ("ydrop", po::value<int>(&cfg.ydrop)->default_value(9430), "y-drop value for gapped extension")
+        ("inner", po::value<int>(&cfg.inner)->default_value(2000), "set threshold for HSPs during interpolation")
         ("gappedthresh", po::value<int>(&cfg.gappedthresh), "score threshold for gapped alignments")
         ("notrivial", po::bool_switch(&cfg.notrivial)->default_value(false), "Don't output a trivial self-alignment block if the target and query sequences are identical");
 
@@ -282,6 +283,7 @@ int main(int argc, char** argv){
         fprintf(stderr, "HSP threshold %d\n", cfg.hspthresh);
         fprintf(stderr, "Gapped %d\n",cfg.gapped);
         fprintf(stderr, "ydrop %d\n", cfg.ydrop);
+        fprintf(stderr, "inner %d\n", cfg.inner);
         fprintf(stderr, "gapped threshold %d\n", cfg.gappedthresh);
 
         for(int i = 0; i < NUC; i++){

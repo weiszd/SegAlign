@@ -1,4 +1,5 @@
-FROM nvidia/cuda:10.2-devel-ubuntu18.04
+#FROM nvidia/cuda:10.2-devel-ubuntu18.04
+FROM nvidia/cuda:11.0.3-devel-ubuntu18.04
 MAINTAINER Sneha D. Goenka, gsneha@stanford.edu
 
 USER root
@@ -9,7 +10,7 @@ RUN apt-get update && \
     apt-get clean && \
     apt-get purge
 
-RUN git clone --recursive https://github.com/weiszd/SegAlign.git 
+RUN git clone --recursive https://github.com/weiszd/SegAlign.git
 WORKDIR SegAlign
 ENV PROJECT_DIR=/home/SegAlign
 

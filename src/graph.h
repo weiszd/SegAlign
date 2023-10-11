@@ -59,6 +59,10 @@ struct Configuration {
     int inner;
     int gappedthresh;
     bool notrivial;
+   
+   // GMASS extra parameters
+    std::string gap;
+    
 
     // Output parameters
     std::string output_format;

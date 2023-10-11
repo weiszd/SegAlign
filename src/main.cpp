@@ -71,7 +71,8 @@ int main(int argc, char** argv){
     po::options_description scoring_desc{"Scoring Options"};
     scoring_desc.add_options()
         ("scoring", po::value<std::string>(&cfg.scoring_file), "Scoring file in LASTZ format")
-        ("ambiguous", po::value<std::string>(&cfg.ambiguous), "ambiguous nucleotides - n/iupac");
+        ("ambiguous", po::value<std::string>(&cfg.ambiguous), "ambiguous nucleotides - n/iupac")
+        ("gap", po::value<std::string>(&cfg.gap), "Score penalties for opening and extending a gap");
 
     po::options_description seeding_desc{"Seeding Options"};
     seeding_desc.add_options()
@@ -89,7 +90,7 @@ int main(int argc, char** argv){
     gapped_desc.add_options()
         ("nogapped", po::bool_switch(&cfg.gapped)->default_value(false), "don't perform gapped extension stage")
         ("ydrop", po::value<int>(&cfg.ydrop)->default_value(9430), "y-drop value for gapped extension")
-        ("inner", po::value<int>(&cfg.inner)->default_value(2000), "set threshold for HSPs during interpolation")
+        ("inner", po::value<int>(&cfg.inner)->default_value(-1), "set threshold for HSPs during interpolation")
         ("gappedthresh", po::value<int>(&cfg.gappedthresh), "score threshold for gapped alignments")
         ("notrivial", po::bool_switch(&cfg.notrivial)->default_value(false), "Don't output a trivial self-alignment block if the target and query sequences are identical");
 
